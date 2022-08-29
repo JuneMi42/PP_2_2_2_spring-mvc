@@ -21,7 +21,7 @@ public class CarDAOImp implements CarDAO{
         car.add(new Car("BMW", 352, "Black"));
     }
 
-    @SuppressWarnings("unchecked")
+
     public List<Car> show(String count) {
         if (count == null) {
             return car;

@@ -1,9 +1,16 @@
 package web.models;
 
+import org.springframework.stereotype.Component;
+
+
+@Component
 public class Car {
     private String model;
     private int series;
     private String color;
+
+
+    public Car() {}
 
     public Car(String model, int series, String color) {
         this.model = model;
