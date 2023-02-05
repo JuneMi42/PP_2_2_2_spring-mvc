@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 @Repository
 public class CarDAOImp implements CarDAO{
-    private List<Car> car;
+    private final List<Car> car;
 
     {
         car = new ArrayList<>();
@@ -22,14 +22,14 @@ public class CarDAOImp implements CarDAO{
     }
 
 
-    public List<Car> show(String count) {
-        if (count == null) {
-            return car;
-        }
-        int integerCount = Integer.parseInt(count);
-        if (integerCount >= 5) {
-            return car;
-        }
-        return car.stream().limit(integerCount).collect(Collectors.toList());
+    @Override
+    public List<Car> show(int count) {
+        return car.stream().limit(count).collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Car> showAll() {
+        return car;
     }
 }
+

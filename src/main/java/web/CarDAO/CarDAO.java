@@ -6,5 +6,7 @@ import java.util.List;
 
 public interface CarDAO {
 
-    public List<Car> show(String count);
+    List<Car> show(int count);
+
+    List<Car> showAll();
 }
